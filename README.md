@@ -2,7 +2,7 @@
 
 [中文说明](./README.zh-CN.md)
 
-This repository contains the code from a graduation-project workflow focused on gas-cylinder auto-labeling, dataset preparation, training, web inference, and localization experiments.
+This repository contains the code from a graduation-project workflow focused on gas-cylinder auto-labeling, dataset preparation, training, and web inference.
 
 ## Core Auto-Labeling Idea
 
@@ -46,7 +46,6 @@ The same segmentation logic also appears in:
 - `prepare_dataset.py`, `visualize_dataset.py`, `train_yolo.py`: local dataset-preparation and training helpers
 - `colab_auto_label.py`, `colab_train.py`, `colab_dataset_clean.py`: Colab workflows exported as Python scripts
 - `colab_*.ipynb`: notebook versions of the Colab workflows
-- `localization/`: stereo and 3D localization experiments
 
 ## Installation
 

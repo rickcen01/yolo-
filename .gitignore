@@ -24,6 +24,7 @@ Thumbs.db
 /gas_visualized_final/
 /gas_visualized_seg/
 /test_runs/
+/localization/
 /static/processed_*.png
 /static/processed_*.jpg
 /static/processed_*.jpeg
@@ -49,4 +50,3 @@ Thumbs.db
 /文献markdown/
 /毕设导师给格式样式模板/
 /新建文件夹/
-

@@ -2,7 +2,7 @@
 
 [English README](./README.md)
 
-这个仓库整理了我的毕业设计相关代码，内容包括气瓶图像自动标注、数据集整理、模型训练、Web 端推理演示，以及后续的定位实验代码。
+这个仓库整理了我的毕业设计相关代码，内容主要聚焦在气瓶图像自动标注、数据集整理、模型训练和 Web 端推理演示。
 
 ## 核心自动标注思路
 
@@ -67,7 +67,6 @@ score = confidence * class_weight * centrality_bonus
 - `prepare_dataset.py`、`visualize_dataset.py`、`train_yolo.py`：本地数据准备和训练辅助脚本
 - `colab_auto_label.py`、`colab_train.py`、`colab_dataset_clean.py`：Google Colab 工作流的 Python 导出版本
 - `colab_*.ipynb`：Colab 笔记本版本
-- `localization/`：双目、三维定位和坐标变换实验代码
 
 ## 安装依赖
 
