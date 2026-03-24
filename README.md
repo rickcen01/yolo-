@@ -1,5 +1,7 @@
 # Gas Cylinder Auto-Labeling with YOLO Segmentation
 
+[中文说明](./README.zh-CN.md)
+
 This repository contains the code from a graduation-project workflow focused on gas-cylinder auto-labeling, dataset preparation, training, web inference, and localization experiments.
 
 ## Core Auto-Labeling Idea
@@ -58,4 +60,3 @@ pip install -r requirements.txt
 - Update those paths before running the scripts on another machine.
 - Model weights (`*.pt`), local datasets, generated visualizations, logs, and thesis materials are intentionally not committed to GitHub.
 - `data.yaml` is provided as a lightweight example and expects a local `gas_dataset` directory.
-
