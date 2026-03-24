@@ -1,0 +1,55 @@
+# ============================================================
+# 3D 精确定位系统 依赖库
+# pip install -r requirements.txt
+# ============================================================
+
+# --- 核心视觉 / 图像处理 ---
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0   # 包含 SGBM、StereoSGBM 等扩展模块
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# --- YOLO 检测（与主项目一致）---
+ultralytics>=8.3.0             # YOLOv8 / YOLO11
+
+# --- 深度学习框架 ---
+torch>=2.0.0
+torchvision>=0.15.0
+
+# --- Depth Anything V2（方案二）---
+# 模型通过 HuggingFace Hub 自动下载，需要以下库：
+transformers>=4.40.0
+huggingface-hub>=0.23.0
+timm>=0.9.0                    # Depth Anything V2 backbone
+
+# --- 3D 可视化 ---
+matplotlib>=3.7.0
+open3d>=0.17.0                 # 点云可视化（可选，较大）
+
+# --- 科学计算 ---
+scipy>=1.11.0
+
+# --- 工具 ---
+tqdm>=4.65.0
+pyyaml>=6.0
+
+# --- 串口通信（机械臂集成，可选）---
+pyserial>=3.5
+
+# ============================================================
+# 安装说明
+# ============================================================
+# 1. 标准安装（CPU）:
+#    pip install -r requirements.txt
+#
+# 2. GPU 加速（推荐，需先安装 CUDA）:
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#    pip install -r requirements.txt
+#
+# 3. 如果 open3d 安装失败（Python 3.12），可注释掉该行，
+#    3D 可视化会自动回退到 matplotlib。
+#
+# 4. HuggingFace 模型下载慢时，设置镜像：
+#    $env:HF_ENDPOINT="https://hf-mirror.com"  (Windows PowerShell)
+#    export HF_ENDPOINT=https://hf-mirror.com  (Linux/Mac)
+# ============================================================

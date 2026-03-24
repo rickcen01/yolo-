@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Large model weights
+*.pt
+
+# Local datasets and generated outputs
+/gas/
+/gas_dataset/
+/dataset_visualized/
+/gas_visualized/
+/gas_visualized_final/
+/gas_visualized_seg/
+/test_runs/
+/static/processed_*.png
+/static/processed_*.jpg
+/static/processed_*.jpeg
+
+# Debug images and logs
+/debug_*.png
+/debug_*.jpg
+/mask_debug_*.png
+/auto_segment_log.txt
+/debug_inference_log.txt
+/debug_log.txt
+/segment_result_log.txt
+/segment_result_log_n.txt
+
+# Thesis materials and local notes
+/03140.md
+/开题报告.md
+/文献调研手册.md
+/jieguo.md
+/aigc.txt
+/renwushu.txt
+*.docx
+/文献markdown/
+/毕设导师给格式样式模板/
+/新建文件夹/
+

@@ -1,0 +1,14 @@
+numpy
+opencv-python
+ultralytics
+torch
+fastapi
+uvicorn
+python-multipart
+huggingface_hub
+requests
+tqdm
+matplotlib
+pandas
+PyYAML
+

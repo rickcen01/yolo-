@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Cylinder Segmenter</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .container { display: flex; gap: 20px; margin-top: 20px; }
+        .image-box { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        img { max-width: 400px; max-height: 400px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Gas Cylinder Segmentation Tool</h1>
+    
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="uploadImage()">Upload & Segment</button>
+    
+    <div class="container">
+        <div class="image-box">
+            <h3>Original</h3>
+            <img id="originalImg" src="" alt="Select an image">
+        </div>
+        <div class="image-box">
+            <h3>Processed</h3>
+            <img id="processedImg" src="" alt="Result will appear here">
+        </div>
+    </div>
+    
+    <div id="resultInfo" style="margin-top: 20px;"></div>
+
+    <script>
+        async function uploadImage() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert("Please select a file first!");
+                return;
+            }
+
+            // Show original image
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('originalImg').src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+
+            // Upload
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                document.getElementById('resultInfo').innerText = "Processing...";
+                const response = await fetch('/segment', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+
+                document.getElementById('processedImg').src = data.image_url;
+                
+                if (data.segment_data) {
+                    document.getElementById('resultInfo').innerText = `Detected: ${data.segment_data.label}`;
+                } else {
+                    document.getElementById('resultInfo').innerText = "No cylinder detected.";
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert("An error occurred during processing.");
+            }
+        }
+    </script>
+</body>
+</html>
